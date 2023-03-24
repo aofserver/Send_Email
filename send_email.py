@@ -58,28 +58,6 @@ def email_send(receiver, subject, message, sender=email_sender, password=email_s
 		print(f"Sending email {receiver}")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
     
 text = "TEST1"
 email_send(email_receiver, "TEST PLAIN TEXT", text, email_sender, email_sender_password, ["test.txt"], "plain")
