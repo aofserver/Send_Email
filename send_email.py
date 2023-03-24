@@ -17,9 +17,9 @@ from email import encoders
 smtp_host = "smtp.gmail.com"
 smtp_port = 465
 
-email_sender = "aofservertestkub40@gmail.com"
-email_sender_password = "dahgqujktwvrxcwf"
-email_receiver = ["mr.sarawutnacwijit@gmail.com"]
+email_sender = "email_sender@gmail.com"
+email_sender_password = "password"
+email_receiver = ["email_receiver@gmail.com"]
 
 def email_send(receiver, subject, message, sender=email_sender, password=email_sender_password, attachments=[], body_type="html"):
     # defaul sender=username. You can also specify here an alias, like "Name Surname <name.surname@example.com>"
