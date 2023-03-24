@@ -17,9 +17,9 @@ from email import encoders
 smtp_host = "smtp.gmail.com"
 smtp_port = 465
 
-email_sender = "sender@gmail.com"
-email_sender_password = "password"
-email_receiver = ["receiver@gmail.com"]
+email_sender = "aofservertestkub40@gmail.com"
+email_sender_password = "dahgqujktwvrxcwf"
+email_receiver = ["mr.sarawutnacwijit@gmail.com"]
 
 def email_send(receiver, subject, message, sender=email_sender, password=email_sender_password, attachments=[], body_type="html"):
     # defaul sender=username. You can also specify here an alias, like "Name Surname <name.surname@example.com>"
@@ -53,12 +53,14 @@ def email_send(receiver, subject, message, sender=email_sender, password=email_s
 	# Send the email(s)
 	context = ssl.create_default_context()
 	with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
-		smtp.login(sender, password)
-		smtp.sendmail(sender, receiver, text)
-		print(f"Sending email {receiver}")
+		try:
+			smtp.login(sender, password)
+			smtp.sendmail(sender, receiver, text)
+			print(f"Sending email {receiver}")
+		except:
+			print("Error Checking List!\n\t- Host SMTP use 'smtp.gmail.com' and Port '465'\n\t- Enable 2FA in gmail account. [ https://myaccount.google.com/signinoptions/two-step-verification/enroll-welcome ] \n\t- Password for app incorract [ https://myaccount.google.com/u/4/apppasswords ]")
+		
 
-
-    
 text = "TEST1"
 email_send(email_receiver, "TEST PLAIN TEXT", text, email_sender, email_sender_password, ["test.txt"], "plain")
 
